@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-docker build --tag="shanika/jmeter-slave:latest" .
-docker push shanika/jmeter-slave:latest
+docker build --tag="gcr.io/spherical-realm-204319/jmeter-slave:latest" .
+docker push gcr.io/spherical-realm-204319/jmeter-slave:latest

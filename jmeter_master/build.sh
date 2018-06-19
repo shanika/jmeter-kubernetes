@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-docker build --tag="shanika/jmeter-master:latest" .
-docker push shanika/jmeter-master:latest
+docker build --tag="gcr.io/spherical-realm-204319/jmeter-master:latest" .
+docker push gcr.io/spherical-realm-204319/jmeter-master:latest
