@@ -21,6 +21,10 @@ RUN   mkdir /jmeter \
 
 ADD plugins /jmeter/apache-jmeter-$JMETER_VERSION/lib
 
+RUN java -cp /jmeter/apache-jmeter-$JMETER_VERSION/lib/ext/jmeter-plugins-manager-1.1.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
+
+RUN bash /jmeter/apache-jmeter-$JMETER_VERSION/bin/PluginsManagerCMD.sh install jpgc-webdriver=2.3
+
 # Install chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
@@ -36,6 +40,6 @@ RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RE
     chmod +x /opt/chromedriver-2.40/chromedriver && \
     ln -fs /opt/chromedriver-2.40/chromedriver /usr/local/bin/chromedriver
 
-ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION/
+ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION
 
 ENV PATH $JMETER_HOME/bin:$PATH
