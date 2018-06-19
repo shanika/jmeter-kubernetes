@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: jmslave
-        image: shanika/jmeter_slave
+        image: gcr.io/spherical-realm-204319/jmeter-slave
         ports:
         - containerPort: 1099
         - containerPort: 50000
