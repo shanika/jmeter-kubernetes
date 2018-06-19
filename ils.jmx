@@ -38,7 +38,7 @@
           <stringProp name="WebDriverConfig.socks_host"></stringProp>
           <intProp name="WebDriverConfig.socks_port">8080</intProp>
           <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
-          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.maximize_browser">false</boolProp>
           <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
           <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
           <stringProp name="ChromeDriverConfig.chromedriver_path">/usr/local/bin/chromedriver</stringProp>
