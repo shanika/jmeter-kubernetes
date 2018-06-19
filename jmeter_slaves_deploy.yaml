@@ -4,6 +4,10 @@ metadata:
   name: jmeter-slaves
   labels:
     jmeter_mode: slave
+  volumes:
+    - name: dshm
+      emptyDir:
+        medium: Memory
 spec:
   replicas: 2 
   selector:
@@ -18,5 +22,8 @@ spec:
       - name: jmslave
         image: gcr.io/spherical-realm-204319/jmeter-slave
         ports:
-        - containerPort: 1099
-        - containerPort: 50000
+          - containerPort: 1099
+          - containerPort: 50000
+        volumeMounts:
+          - mountPath: /dev/shm
+            name: dshm
