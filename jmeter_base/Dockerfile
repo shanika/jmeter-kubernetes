@@ -25,7 +25,7 @@ RUN java -cp /jmeter/apache-jmeter-$JMETER_VERSION/lib/ext/jmeter-plugins-manage
 
 RUN bash /jmeter/apache-jmeter-$JMETER_VERSION/bin/PluginsManagerCMD.sh install jpgc-webdriver=2.3
 
-ADD jmeter-plugins-webdriver-2.3.jar /jmeter/apache-jmeter-$JMETER_VERSION/lib/ext/jmeter-plugins-webdriver-2.3.jar
+COPY jmeter-plugins-webdriver-2.3.jar /jmeter/apache-jmeter-$JMETER_VERSION/lib/ext/
 
 # Install chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
