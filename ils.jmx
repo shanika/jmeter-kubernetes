@@ -88,7 +88,10 @@ var wait = new pkg.WebDriverWait(WDS.browser, 60)
 var uuid = ${description_id};
 
 wait.until(pkg.ExpectedConditions.elementToBeClickable(pkg.By.xpath(&quot;//a[@href=&apos;#runReports&apos;]&quot;)))
-WDS.browser.findElement(pkg.By.xpath(&quot;//a[@href=&apos;#runReports&apos;]&quot;)).click()
+
+var btnView1 = WDS.browser.findElement(pkg.By.xpath(&quot;//a[@href=&apos;#runReports&apos;]&quot;))
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;, btnView1)
+
 wait.until(pkg.ExpectedConditions.presenceOfElementLocated(pkg.By.xpath(&quot;//th[@colspan=&apos;1&apos;][contains(text(),&apos;Event Type&apos;)]&quot;)))
 
 WDS.sampleResult.sampleEnd()
